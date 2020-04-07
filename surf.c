@@ -231,6 +231,7 @@ static void togglefullscreen(Client *c, const Arg *a);
 static void togglecookiepolicy(Client *c, const Arg *a);
 static void toggleinspector(Client *c, const Arg *a);
 static void find(Client *c, const Arg *a);
+static void bmadd(Client *c, const Arg *a); /* Better Bookmarks */
 
 /* Buttons */
 static void clicknavigate(Client *c, const Arg *a, WebKitHitTestResult *h);
@@ -1945,6 +1946,16 @@ find(Client *c, const Arg *a)
 		if (strcmp(s, "") == 0)
 			webkit_find_controller_search_finish(c->finder);
 	}
+}
+
+/* Better Bookmarks */
+void
+bmadd(Client *c, const Arg *a)
+{
+	// _SURF_URI doesn't seem to update automatically if the webpage itself
+	// changes the URI (e.g. by clicking on a hyperlink).
+	setatom(c, AtomUri, geturi(c));
+	spawn(c, a);
 }
 
 void
