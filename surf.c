@@ -1952,8 +1952,8 @@ find(Client *c, const Arg *a)
 void
 bmadd(Client *c, const Arg *a)
 {
-	// _SURF_URI doesn't seem to update automatically if the webpage itself
-	// changes the URI (e.g. by clicking on a hyperlink).
+	/* _SURF_URI doesn't seem to update automatically if the webpage itself
+	 * changes the URI (e.g. by clicking on a hyperlink). */
 	setatom(c, AtomUri, geturi(c));
 	spawn(c, a);
 }

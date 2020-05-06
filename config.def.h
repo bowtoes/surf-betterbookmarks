@@ -158,8 +158,10 @@ static Key keys[] = {
 	{ MODKEY,                GDK_KEY_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO", PROMPT_GO) },
 	{ MODKEY,                GDK_KEY_f,      spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
 	{ MODKEY,                GDK_KEY_slash,  spawn,      SETPROP("_SURF_FIND", "_SURF_FIND", PROMPT_FIND) },
-	{ MODKEY,                GDK_KEY_m,      bmadd,      BM_ADD("_SURF_URI") }, /* Better Bookmarks */
-	{ MODKEY,                GDK_KEY_z,      spawn,      BM_SET("_SURF_GO", PROMPT_BM) }, /* Better Bookmarks */
+	/* Better Bookmarks */
+	{ MODKEY,                GDK_KEY_m,      bmadd,      BM_ADD("_SURF_URI") },
+	/* Better Bookmarks */
+	{ MODKEY,                GDK_KEY_z,      spawn,      BM_SET("_SURF_GO", PROMPT_BM) },
 
 	{ 0,                     GDK_KEY_Escape, stop,       { 0 } },
 	{ MODKEY,                GDK_KEY_c,      stop,       { 0 } },
