@@ -6,6 +6,11 @@ static char *styledir       = "~/.surf/styles/";
 static char *certdir        = "~/.surf/certificates/";
 static char *cachedir       = "~/.surf/cache/";
 static char *cookiefile     = "~/.surf/cookies.txt";
+static char **plugindirs    = (char*[]){
+	"~/.surf/plugins/",
+	LIBPREFIX "/mozilla/plugins/",
+	NULL
+};
 
 #define BM_FILE "~/.surf/bookmarks.txt" /* Better Bookmarks */
 
@@ -26,6 +31,7 @@ static Parameter defconfig[ParameterLast] = {
 	[DefaultCharset]      =       { { .v = "UTF-8" }, },
 	[DiskCache]           =       { { .i = 1 },     },
 	[DNSPrefetch]         =       { { .i = 0 },     },
+	[Ephemeral]           =       { { .i = 0 },     },
 	[FileURLsCrossAccess] =       { { .i = 0 },     },
 	[FontSize]            =       { { .i = 12 },    },
 	[FrameFlattening]     =       { { .i = 0 },     },
